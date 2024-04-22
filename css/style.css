@@ -242,7 +242,7 @@ body {
         'opsz' 24;
 }
 
-.container{
+.container {
     padding-inline: 16px;
     max-width: 500px;
     width: 100%;
@@ -253,7 +253,7 @@ body {
 /* COMPONENT */
 
 /* button */
-.btn{
+.btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,24 +262,144 @@ body {
     padding-inline: 24px;
     border-radius: var(--radius-full);
     max-width: max-content;
-    transition:  var(--transition-duration-quick) var(--transition-easing-quick);
+    transition: var(--transition-duration-quick) var(--transition-easing-quick);
 }
 
-.btn.fill{
+.btn-fill {
     background-color: var(--primary-100);
     color: var(--neutral-100);
 }
 
-.btn.fill:where(:hover, :focus){
+.btn-fill:where(:hover, :focus) {
     background-color: var(--primary-90);
     box-shadow: var(--shadow-1);
 }
 
-.btn.fill:where(:active, :focus-visible){background-color: var(--primary-80);}
+.btn-fill:where(:active, :focus-visible) {
+    background-color: var(--primary-80);
+}
 
-.btn-outline{
+.btn-outline {
     color: var(--primary-100);
     box-shadow: inset 0 0 0 2px var(--primary-100);
 }
 
-.btn-outline:where(:hover)
+.btn-outline:where(:hover, :focus, :focus-visible) {
+    color: var(--neutral-100);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-100);
+}
+
+.btn-outline:focus {
+    background-color: var(--primary-90);
+}
+
+.btn-outline:where(:hover, :focus-visible) {
+    background-color: var(--neutral-80);
+}
+
+/* 
+*ICON BTN */
+
+.icon-btn {
+    height: 48px;
+    width: 48px;
+    display: grid;
+    place-items: center;
+    background-color: var(--neutral-100);
+    color: var(--neutral-10);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-3);
+    transition: var(--transition-duration-quick) var(--transition-easing-quick);
+}
+
+.icon-btn:where(:hover, :focus-visible) {
+    background-color: var(--neutral-90);
+}
+
+
+/* 
+HEADER
+ */
+
+ .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 4;
+ }
+
+ .header.active{
+    animation: slide_in 500ms ease forwards;
+    height: 72px;
+    background-color: var(--primary-40);
+ }
+
+ @keyframes slide_in{
+    0%{transform: translateY(-100%);}
+    100%{transform: translateY(0);}
+ }
+
+ .header .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+ }
+
+ .nav-toggle-btn .close,
+ .nav-toggle-btn.active .open{display: none; }
+ 
+ .nav-toggle-btn .open,
+ .nav-toggle-btn.active .close{display: block; }
+
+ .navbar{
+    position: absolute;
+    top: 85%;
+    right: 16px;
+    background-color: var(--neutral-100);
+    min-width: 260px;
+    padding: 10px;
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-1);
+    visibility: hidden;
+    opacity: 0;
+    scale: 0.4;
+    transition: var(--transition-duration-quick) var(--transition-easing-quick);
+    transform-origin: top right;
+    z-index: 4;
+ }
+
+ .navbar.active{
+    visibility: visible;
+    opacity: 1;
+    scale: 1;
+
+ }
+
+ .navbar, .navbar-list, .navbar-wrapper{
+    display: grid;
+    gap: 8px;
+ }
+
+ .navbar-link,
+ .btn-link{
+    color: var(--neutral-30);
+    padding: 6px 12px;
+    transition: var(--transition-duration-quick) var(--transition-easing-quick);
+ }
+
+ .btn-link{
+    border-block-start: 1px solid var(--neutral-90);
+    padding-block-start: 14px;
+ }
+
+ :is( .navbar-link, .btn-link):is(:hover, :focus-visible),
+ .navbar-link.active{
+    color: var(--primary-100);
+ }
