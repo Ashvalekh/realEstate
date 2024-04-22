@@ -403,3 +403,5 @@ HEADER
  .navbar-link.active{
     color: var(--primary-100);
  }
+
+ .navbar .btn{min-width: 100%;}
