@@ -104,7 +104,7 @@ span,
 input,
 select,
 button {
-    display: black;
+    display: block;
 }
 
 a {
