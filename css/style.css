@@ -248,6 +248,21 @@ body {
     margin-inline: auto;
 }
 
+.section{padding-block-end: 60px;}
+
+.title-wrapper{ margin-block-end: 32px; }
+
+.img-holder{
+    aspect-ratio: var(--width)/var(--height);
+    background-color: var(--neutral-80);
+    overflow: hidden;
+}
+
+.img-cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* COMPONENT */
 
@@ -318,10 +333,53 @@ body {
     background-color: var(--neutral-90);
 }
 
+/**
+* BADGE
+*/
 
-/* 
+.badge{
+    height: 32px;
+    max-width: max-content;
+    display: grid;
+    place-items: center;
+    padding-inline: 16px;
+    background-color: var(--secondary-100);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-3);
+}
+
+/**
+* CARD
+*/
+
+.card{
+    border-radius: var(--radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow-2);
+    transition: var(--transition-duration-quick) var(--transition-easing-quick);
+}
+
+.card:where(:hover, :focus-within){ box-shadow: var(--shadow-4);}
+
+.card-banner{ position: relative;}
+
+.card-banner .img-cover{ 
+    transition: var(--transition-duration-smooth) var(--transition-easing-quick);
+ }
+
+ .card:where(:hover, :focus-within) .img-cover{
+    scale: 1.05;
+    rotate: 2deg;
+ }
+
+ .card:where( .badge, icon-btn){
+    position: absolute;
+    top: 20px;
+ }
+
+/* ---------------
 HEADER
- */
+ ----------------*/
 
  .header{
     position: fixed;
@@ -405,7 +463,9 @@ HEADER
 
  .navbar .btn{min-width: 100%;}
 
- /* #HERO */
+ /*------------
+  #HERO
+   -------------*/
  .hero-banner{display: none;}
 
  .hero {
@@ -492,3 +552,8 @@ HEADER
   pointer-events: none;
   z-index: -2;
 }
+
+/* 
+#Property
+*/
+
