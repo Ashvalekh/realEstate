@@ -9,7 +9,8 @@
 			"extensions": [
 				"PKief.material-icon-theme",
 				"ritwickdey.LiveServer",
-				"ms-vscode.live-server"
+				"ms-vscode.live-server",
+				"esbenp.prettier-vscode"
 			]
 		}
 	}

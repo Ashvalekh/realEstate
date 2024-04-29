@@ -424,7 +424,32 @@ body {
     transition: var(--transition-duration-quick) var(--transition-easing-quick);
 }
 
-.card-title:where(:hover, :focus-visible){color: var(--primary-100);}
+.card-title:where(:hover, :focus-visible) {
+    color: var(--primary-100);
+}
+
+.card-text {
+    color: var(--neutral-40);
+}
+
+.card-meta-list {
+    padding-block-start: 16px;
+    margin-block-start: 16px;
+    border-block-start: 1px solid var(--neutral-90);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card .meta-item{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--neutral-20);
+}
+
 
 
 /* ---------------
@@ -626,6 +651,19 @@ HEADER
     z-index: -2;
 }
 
-/* 
+/* --------------
 #Property
-*/
+-----------*/
+
+.property{ padding-block-start: 60px;}
+
+.property .section-text{
+    margin-block: 8px 16px;
+    color: var(--neutral-30);
+}  
+
+.property-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmaax(200px, 1fr));
+    gap: 16px;
+}
